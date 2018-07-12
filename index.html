@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>body-pose-emotion</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="page-header">
+    <h2>Body Pose to Emotional Intensity <br/>
+    <small> We present a real-time method for robots to capture fluctuations of participants’ emotional intensities from their body poses.</small></h2></p>
+  </div>
+
+  <p class="h2 text-primary">Problem</p>
+  <div class="well">
+    <div align="center">
+      <video width="500" height="400" class="embed-responsive-item" loop controls autoplay muted>
+          <source src="laughing.mp4" type="video/mp4">
+      </video>
+    </div>
+    <p class="h4">This subject appears to be very excited when he interacts with a robot. How does this robot know this exciteness?</p>
+  </div>
+
+
+  <p class="h2 text-primary">Method</p>
+
+  <div class="well">
+    <div class="row">
+      <div class="col-md-6">
+        <p class="h4">1. Exactring body poses</p>
+        <div align="center">
+          <video width="500" height="400" class="embed-responsive-item" loop controls autoplay muted>
+              <source src="body-pose-detection.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <p class="h4">2. Using transformations to represent body poses</p>
+        <div align="center">
+          <img src="body-pose.png" class="img-rounded" alt="body-pose" width="450" height="250"> 
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <p class="h4">3. Training LSTM-RNN to fuse body poses with facial expressions</p>
+      <div align="center">
+        <img src="lstm.png" class="img-rounded" alt="body-pose" width="670" height="400"> 
+      </div>
+    </div>
+  </div>
+
+  <p class="h2 text-primary">Evaluation & User study</p>
+
+  <div class="well">
+    <div class="row">
+      <p class="h4">1. Training and testing:</p>
+      <div align="center">
+        <img src="cv-table.png" class="img-rounded" alt="body-pose" width="600" height="100"> 
+      </div>
+      <p align="right" class="text-muted">*Training and testing on <a href="http://ebmdb.tuebingen.mpg.de/">MPI body pose dataset</a> </p>
+    </div>
+    <div class="row">
+      <p class="h4">2. Evaluating the proposed model on Pepper robot</p>
+      <div class="col-md-6">
+        <video width="500" height="400" class="embed-responsive-item" controls>
+            <source src="happy.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="col-md-6">
+        <video width="500" height="400" class="embed-responsive-item" controls>
+            <source src="sad.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+
+    <div class="row">
+      <p class="h4">3. Reported user experiences</p>
+      <div align="center">
+        <img src="stat-exp.png" class="img-rounded" alt="body-pose" width="880" height="400"> 
+      </div>
+    </div>
+  </div>
+
+  <p class="h2 text-primary">Reference</p>
+
+  <div class="well">
+    <p class="h4 text-success">Estimating Emotional Intensity from Body Poses for Human-Robot Interaction, IEEE SMC 2018 (to appear) </p>
+    <p class="text-muted"> <div class="text-muted"> Abstract: </div> <div class="text-info"> Equipping social and service robots with the ability to perceive human emotional intensities during an interaction is in increasing demand. Most of existing work focuses on determining which emotion(s) participants are expressing from facial expressions but largely overlooks the emotional intensities spontaneously revealed by other social cues, especially body languages. In this paper, we present a real-time method for robots to capture fluctuations of participants’ emotional intensities from their body poses. Unlike conventional joint-position-based approaches, our method adopts local joint transformations as pose descriptors which are invariant to subject body differences and the pose sensor positions. In addition, we use an Long Short-Term Memory-Recurrent Neural Network (LSTM-RNN) architecture to take the specific emotion context into account when estimating the intensities from body poses. Through dataset evaluations, we show that the proposed method delivers good performances on test dataset. Also, a series of succeeding field tests on a physical robot demonstrates that the proposed method effectively estimates subjects emotional intensities in real-time. And the robot equipped with our method is perceived to be more emotion-sensitive and more emotionally intelligent. </div> </p>
+  </div>
+
+</div>
+
+</body>
+</html>
